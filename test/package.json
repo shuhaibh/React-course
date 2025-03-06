@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "this is my test app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuhaibh/React-course.git"
+  },
+  "author": "Shuhaibh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shuhaibh/React-course/issues"
+  },
+  "homepage": "https://github.com/shuhaibh/React-course#readme"
+}

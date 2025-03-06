@@ -11,10 +11,31 @@
     </div>
   </body>
 
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+
   <script>
-    const message = document.createElement("h1")
-    message.innerHTML = "Hello from javacript"
-    const root = document.getElementById('root')
-    root.appendChild(message)
+    const message = React.createElement(
+      "h1",
+      { id: "parent" },
+      React.createElement("div", { id: "child" }, [
+        React.createElement("h1", { id: "greeting" }, "hello from react"),
+        React.createElement(
+          "h2",
+          {  id: "greeting2" },
+          "hello from react heading 2"
+        ),
+      ])
+    );
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+
+    root.render(message);
   </script>
 </html>
