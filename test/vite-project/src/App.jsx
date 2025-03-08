@@ -1,10 +1,15 @@
+import Hello from "./components/Hello";
+import Bye from "./components/Bye";
+import Animals from "./components/Animals";
+import Fruits from "./components/Fruits";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <h1>Hello from React</h1>
-  )
+    <>
+    <Fruits />
+    </>
+  );
 }
 
-export default App
+export default App;
