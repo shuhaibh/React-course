@@ -1,0 +1,63 @@
+body{
+  font-family: 'Lucida Sans', Arial, sans-serif;
+  background-color: #899878;
+}
+
+h1{
+  text-align: center;
+  color: #121113;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container > input  {
+  width: 400px;
+  height: 30px;
+  font-size: 1.25rem;
+  border-radius: 5px;
+  outline: 0px;
+}
+
+.input-container > button{
+  width: 60px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  background-color: #222725;
+  color: #F7F7F2;
+  margin-top: 10px;
+  border-width: 2.5px;
+}
+
+.task-container{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.to-do{
+  width: 500px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  align-items: center;
+  background-color: #F7F7F2;
+  padding: 0px 10px;
+}
+
+.actions > button {
+  background-color: #222725;
+  color: #F7F7F2;
+  height: 30px;
+  width: 75px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  margin-left: 10px;
+}
