@@ -1,13 +1,18 @@
-
-import './App.css'
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Movies from "./components/Movies";
+import WatchList from "./components/WatchList";
 
 function App() {
- 
   return (
     <>
-    <h1>Hello React</h1>
+      <Navbar />
+
+      <Movies />
+
+      <WatchList />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
