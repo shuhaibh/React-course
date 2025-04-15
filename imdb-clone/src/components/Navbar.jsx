@@ -1,18 +1,20 @@
 import React from 'react'
 import LOGO from '../cinema-logo.jpg' 
 
+import { Link } from 'react-router-dom'
+
 const Navbar = () => {
   return (
-    <div className="flex items-center border-b p-4 space-x-8">
-      <img className="w-[50px]" src={LOGO} alt="Logo" />
+    <div className="flex items-center border space-x-8 pl-3 py-4">
+      <img className="w-[60px]" src={LOGO} alt="Logo" />
 
       <div className="flex space-x-8">
-        <a href="/" className="text-lg font-medium font-bold hover:text-blue-500 transition">
+        <Link to="/" className="text-blue-500 text-2xl  font-bold hover:text-blue-900 transition">
           Home
-        </a>
-        <a href="/watchlist" className="text-lg font-medium font-bold hover:text-blue-500 transition">
+        </Link>
+        <Link to="/watchlist" className="text-blue-500 text-2xl  font-bold hover:text-blue-900 transition    ">
           Watchlist
-        </a>
+        </Link>
       </div>
     </div>
   )
