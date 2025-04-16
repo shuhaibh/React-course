@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from "react";
 import Moviecard from "./Moviecard";
+import MoviePopup from "./MoviePopup";
 import axios from "axios";
 import Pagination from "./Pagination";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
-  const [pageNo, setPageNo] = useState(1)
+  const [pageNo, setPageNo] = useState(1);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
-  const handlePrev = ()=>{
-    if(pageNo==1)
-    {
-      setPageNo(1)
+  const handlePrev = () => {
+    if (pageNo === 1) {
+      return;
+    } else {
+      setPageNo(pageNo - 1);
     }
-    else{
-    setPageNo(pageNo-1)
-    }
-  }
+  };
 
-  const handleNext = ()=>{
-    setPageNo(pageNo+1)
-  }
+  const handleNext = () => {
+    setPageNo(pageNo + 1);
+  };
 
   useEffect(() => {
     axios
@@ -28,13 +28,14 @@ function Movies() {
       )
       .then((res) => {
         setMovies(res.data.results);
+        console.log(res.data.results);
       });
   }, [pageNo]);
 
   return (
     <div className="p-6">
       <h1 className="text-3xl font-semibold text-center mb-8 text-gray-800">
-        🎬 Trending Movies
+        Trending Movies
       </h1>
 
       <div className="flex flex-wrap justify-center gap-6">
@@ -43,13 +44,24 @@ function Movies() {
             key={movie.id}
             poster_path={movie.poster_path}
             name={movie.original_title}
+            onClick={() => setSelectedMovie(movie)}
           />
         ))}
       </div>
 
-      <Pagination pageNo={pageNo} handleNext={handleNext} handlePrev={handlePrev}/>
-    </div>
+      <Pagination
+        pageNo={pageNo}
+        handleNext={handleNext}
+        handlePrev={handlePrev}
+      />
 
+      {selectedMovie && (
+        <MoviePopup
+          movie={selectedMovie}
+          onClose={() => setSelectedMovie(null)}
+        />
+      )}
+    </div>
   );
 }
 
