@@ -4,7 +4,7 @@ import MoviePopup from "./MoviePopup";
 import axios from "axios";
 import Pagination from "./Pagination";
 
-function Movies() {
+function Movies({handleAddtoWatchList , handleRemovefromWatchList ,watchlist}) {
   const [movies, setMovies] = useState([]);
   const [pageNo, setPageNo] = useState(1);
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -42,9 +42,13 @@ function Movies() {
         {movies.map((movie) => (
           <Moviecard
             key={movie.id}
+            movieObj={movie}
             poster_path={movie.poster_path}
             name={movie.original_title}
             onClick={() => setSelectedMovie(movie)}
+            handleAddtoWatchList={handleAddtoWatchList}
+            handleRemovefromWatchList={handleRemovefromWatchList}
+            watchlist={watchlist}
           />
         ))}
       </div>
