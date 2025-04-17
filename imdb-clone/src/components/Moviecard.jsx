@@ -9,6 +9,9 @@ function Moviecard({ poster_path, name, onClick }) {
         backgroundImage: `url(https://image.tmdb.org/t/p/original/${poster_path})`,
       }}
     >
+      <div>
+        
+      </div>
       <div className="text-white text-sm w-full p-2 text-center bg-gray-900/60 rounded-b-xl">
         {name}
       </div>
