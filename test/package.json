@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/shuhaibh/React-course/issues"
   },
-  "homepage": "https://github.com/shuhaibh/React-course#readme"
+  "homepage": "https://github.com/shuhaibh/React-course#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "tailwindcss": "^4.1.4"
+  }
 }

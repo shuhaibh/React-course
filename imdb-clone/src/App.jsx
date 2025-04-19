@@ -10,18 +10,20 @@ import { useEffect, useState } from "react";
 function App() {
   let [watchlist,setWatchList]=useState([])
 
-  let handleAddtoWatchlist = (movieObj)=>{
-    let newWatchList = [...watchlist,movieObj]
-      localStorage.setItem('moviesApp',JSON.stringify(newWatchList))
+  let handleAddtoWatchList = (movieObj) => {
+    if (!watchlist.some(movie => movie.id === movieObj.id)) {
+      let newWatchList = [...watchlist, movieObj]
+      localStorage.setItem('moviesApp', JSON.stringify(newWatchList))
       setWatchList(newWatchList)
       console.log(newWatchList)
+    }
   }
 
-  let handleRemovefromWatchList = (movieObj)=>{
-    let filteredWatchList = watchlist.filter((movie)=>{
-      return movie.id != movieObj.id
+  let handleRemovefromWatchList = (movieObj) => {
+    let filteredWatchList = watchlist.filter((movie) => {
+      return movie.id !== movieObj.id  
     })
-    localStorage.setItem('moviesApp',JSON.stringify(filteredWatchList))
+    localStorage.setItem('moviesApp', JSON.stringify(filteredWatchList))
     setWatchList(filteredWatchList)
   }
 
@@ -44,7 +46,7 @@ function App() {
             element={
               <>
                 <Banner />
-                <Movies watchlist={watchlist} handleAddtoWatchList={handleAddtoWatchlist} handleRemovefromWatchList={handleRemovefromWatchList}/>
+                <Movies watchlist={watchlist} handleAddtoWatchList={handleAddtoWatchList} handleRemovefromWatchList={handleRemovefromWatchList}/>
               </>
             }
           />
